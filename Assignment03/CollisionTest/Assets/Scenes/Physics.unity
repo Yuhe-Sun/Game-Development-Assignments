@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friction: 100
   mass: 100
-  wallSize: {x: 0, y: 0, z: 0}
+  hitNormal: {x: 1, y: 0, z: 0}
 --- !u!1 &514410018
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1088610526}
-  sphereMovememt: {fileID: 570910663}
+  sphereMovement: {fileID: 570910663}
 --- !u!114 &570910669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 719928371}
-  sphereMovememt: {fileID: 570910663}
+  sphereMovement: {fileID: 570910663}
 --- !u!114 &570910670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 2061545493}
-  sphereMovememt: {fileID: 570910663}
+  sphereMovement: {fileID: 570910663}
 --- !u!114 &570910671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 496082234}
-  sphereMovememt: {fileID: 570910663}
+  sphereMovement: {fileID: 570910663}
 --- !u!1 &719928371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3906340629251428533, guid: 648b3aeb1fcecbd4a84c76e18d7c9d2f,
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friction: 100
   mass: 100
-  wallSize: {x: 0, y: 0, z: 0}
+  hitNormal: {x: 0, y: 0, z: 1}
 --- !u!1 &870025471
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 719928371}
-  sphereMovememt: {fileID: 958530937}
+  sphereMovement: {fileID: 958530937}
 --- !u!114 &958530942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1088610526}
-  sphereMovememt: {fileID: 958530937}
+  sphereMovement: {fileID: 958530937}
 --- !u!114 &958530943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 2061545493}
-  sphereMovememt: {fileID: 958530937}
+  sphereMovement: {fileID: 958530937}
 --- !u!114 &958530944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 496082234}
-  sphereMovememt: {fileID: 958530937}
+  sphereMovement: {fileID: 958530937}
 --- !u!1 &1088610526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2124933990812269777, guid: 648b3aeb1fcecbd4a84c76e18d7c9d2f,
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friction: 100
   mass: 100
-  wallSize: {x: 0, y: 0, z: 0}
+  hitNormal: {x: 0, y: 0, z: -1}
 --- !u!850595691 &2042398179
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friction: 100
   mass: 100
-  wallSize: {x: 0, y: 0, z: 0}
+  hitNormal: {x: -1, y: 0, z: 0}
 --- !u!4 &3239973711549501233
 Transform:
   m_ObjectHideFlags: 0

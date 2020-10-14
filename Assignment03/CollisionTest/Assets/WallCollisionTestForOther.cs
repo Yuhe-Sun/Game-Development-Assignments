@@ -7,7 +7,7 @@ public class WallCollisionTestForOther : MonoBehaviour
 {
 
     public GameObject wall;
-    public OtherSphere sphereMovememt;
+    public OtherSphere sphereMovement;
 
     private float xDistance;
     private float zDistance;
@@ -44,17 +44,18 @@ public class WallCollisionTestForOther : MonoBehaviour
                 Debug.Log("碰撞发生!");
 
 
-                //Vector3 v1 = gameObject.GetComponent<SphereMovement>().PreV;
-                Vector3 v1 = sphereMovememt.currentV;
-                float m1 = 1.0f; // 简单起见，认为自己的质量为1
-                Vector3 v2 = wallProperties.currentV;
-                float m2 = wallProperties.mass;
+                ////Vector3 v1 = gameObject.GetComponent<SphereMovement>().PreV;
+                //Vector3 v1 = sphereMovememt.currentV;
+                //float m1 = 1.0f; // 简单起见，认为自己的质量为1
+                //Vector3 v2 = wallProperties.currentV;
+                //float m2 = wallProperties.mass;
 
-                sphereMovememt.currentV = ((m1 - m2) * v1 + 2 * m2 * v2) / (m1 + m2);
+                sphereMovement.currentV = Vector3.Reflect(sphereMovement.currentV, wallProperties.hitNormal);
+                //sphereMovememt.currentV = ((m1 - m2) * v1 + 2 * m2 * v2) / (m1 + m2);
                 //wallProperties.currentV = ((m2 - m1) * v2 + 2 * m1 * v1) / (m1 + m2);
 
                 //如果有碰撞，位置回退，防止穿透
-                transform.position = sphereMovememt.prePos;
+                transform.position = sphereMovement.prePos;
 
             }
         }

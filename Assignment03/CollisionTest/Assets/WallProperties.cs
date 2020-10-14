@@ -7,11 +7,12 @@ public class WallProperties : MonoBehaviour
 {
     public float friction;
     public float mass;
+    public Vector3 hitNormal;
     //public float radius;
 
     [NonSerialized]
     public Vector3 currentV;
-    //[NonSerialized]
+    [NonSerialized]
     public Vector3 wallSize;
 
     private Collider wallCollider;
