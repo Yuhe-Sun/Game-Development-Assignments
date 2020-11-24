@@ -37,6 +37,8 @@ namespace UnityChan
 
 		public ParticleSystem particles;
 
+		public CameraShake cameraShake;
+
 
 		private OverlapCheck overlapChecker;
 
@@ -59,6 +61,7 @@ namespace UnityChan
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
 		static int attackState = Animator.StringToHash("Base Layer.Attack");
+		static int swordAttackState = Animator.StringToHash("Base Layer.SwordAttack");
 
 		// 初期化
 		void Start ()
@@ -188,7 +191,18 @@ namespace UnityChan
                     }
 
                 }
-            }
+				// set state to "Attack" if press E
+				if (Input.GetButtonDown("SwordAttack"))
+				{
+					anim.SetBool("SwordAttack", true);
+					if (overlapChecker.nearCol == true)
+					{
+						particles.Play();
+						StartCoroutine(cameraShake.Shake(.15f, .1f));
+					}
+
+				}
+			}
 			// REST中の処理
 			// 現在のベースレイヤーがrestStateの時
 			else if (currentBaseState.nameHash == restState) {
@@ -206,6 +220,15 @@ namespace UnityChan
 				if (!anim.IsInTransition(0))
 				{
 					anim.SetBool("Attack", false);
+				}
+			}
+			// stop sword attack state when animation stop
+			else if (currentBaseState.nameHash == swordAttackState)
+			{
+
+				if (!anim.IsInTransition(0))
+				{
+					anim.SetBool("SwordAttack", false);
 				}
 			}
 		}
