@@ -36,6 +36,7 @@ namespace UnityChan
         // キャラクターコントローラ（カプセルコライダ）の参照
 
 		public ParticleSystem particles;
+		public ParticleSystem sparks;
 
 		public CameraShake cameraShake;
 
@@ -191,13 +192,13 @@ namespace UnityChan
                     }
 
                 }
-				// set state to "Attack" if press E
+				// set state to "Sword Attack" if press E
 				if (Input.GetButtonDown("SwordAttack"))
 				{
 					anim.SetBool("SwordAttack", true);
 					if (overlapChecker.nearCol == true)
 					{
-						particles.Play();
+						sparks.Play();
 						StartCoroutine(cameraShake.Shake(.15f, .1f));
 					}
 
